@@ -1,7 +1,7 @@
 window.env = {
     api: {
-        authUrl: 'http://localhost:9002/api/v2/barong',
-        tradeUrl: 'http://localhost:9002/api/v2/peatio',
+        authUrl: 'http://localhost:9002/api/v2/account',
+        tradeUrl: 'http://localhost:9002/api/v2/exchange',
         applogicUrl: 'http://localhost:9002/api/v2/applogic',
         rangerUrl: 'ws://localhost:9003/api/v2/ranger',
         finexUrl: 'http://localhost:9002/api/v2/finex',
