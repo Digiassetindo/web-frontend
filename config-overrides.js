@@ -26,12 +26,12 @@ module.exports = function override(config, env) {
             }
         }
 
-        if (`${process.env.BUILD_DOMAIN}` != "") {
-            const domains = process.env.BUILD_DOMAIN.split(',');
-            config.plugins.push(
-                new JavaScriptObfuscator({ rotateUnicodeArray: true, domainLock: domains }, [commonJSFilename])
-            );
-        }
+      //   if (`${process.env.BUILD_DOMAIN}` != "") {
+      //       const domains = process.env.BUILD_DOMAIN.split(',');
+      //       config.plugins.push(
+      //           new JavaScriptObfuscator({ rotateUnicodeArray: true, domainLock: domains }, [commonJSFilename])
+      //       );
+      //   }
 
         config.plugins.push(
             new CompressionPlugin({
