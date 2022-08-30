@@ -12,7 +12,7 @@ import {
 } from '../../helpers';
 import { CustomInput } from '../CustomInput';
 
-export const ChangePasswordComponent = props => {
+export const ChangePasswordComponent = (props: any) => {
     const [oldPassword, setOldPassword] = React.useState('');
     const [newPassword, setNewPassword] = React.useState('');
     const [confirmationPassword, setConfirmationPassword] = React.useState('');

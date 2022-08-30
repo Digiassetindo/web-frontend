@@ -1,15 +1,15 @@
 import * as React from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useDispatch, useSelector } from 'react-redux';
-import { GeetestCaptcha } from '../../containers';
-import { useSetShouldGeetestReset } from '../../hooks';
+import { GeetestCaptcha } from 'containers';
+import { useSetShouldGeetestReset } from 'hooks';
 import {
     GeetestCaptchaResponse,
     selectConfigs,
     selectShouldGeetestReset,
     setGeetestCaptchaSuccess,
     setRecaptchaSuccess,
-} from '../../modules';
+} from 'modules';
 
 export const CaptchaComponent = props => {
     const dispatch = useDispatch();

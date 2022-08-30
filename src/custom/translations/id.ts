@@ -92,9 +92,9 @@ export const id: LangType = {
 
 
     /* Landing */
-    'page.body.landing.header.button1': 'profile',
-    'page.body.landing.header.button2': 'log in',
-    'page.body.landing.header.button3': 'register',
+    'page.body.landing.header.button1': 'Profile',
+    'page.body.landing.header.button2': 'Login',
+    'page.body.landing.header.button3': 'Register',
 
     'page.body.landing.marketInfo.title.text1': 'Welcome to Digiassetindo.',
     'page.body.landing.marketInfo.title.text2': 'Buy, sell and trade digital currency.',
@@ -546,8 +546,8 @@ export const id: LangType = {
     'page.footer.legalDocuments': 'Legal documents',
     'page.footer.faq': 'FAQ',
 
-    'page.header.signIn': 'Sign In',
-    'page.header.signIn.email': 'Email',
+    'page.header.signIn': 'Masuk',
+    'page.header.signIn.email': 'Alamat Email',
     'page.header.signIn.password': 'Password',
     'page.header.signIn.password.message.error': 'Password is invalid',
     'page.header.signIn.receiveConfirmation': 'Didn\'t receive your confirmation email?',
@@ -570,7 +570,7 @@ export const id: LangType = {
     'page.header.signUp.confirmPassword.message.error': 'Passwords don\'t match',
     'page.header.signUp.referalCode': 'Referral Code',
     'page.header.signUp.terms': 'I have read and agree to the Terms of Service',
-    'page.header.signUp.modal.header': 'VERIFY YOUR EMAIL ADDRESS',
+    'page.header.signUp.modal.header': 'VERIFY YOUR ACCOUNT',
     'page.header.signUp.modal.body': 'To complete registration, check for an ' +
                                       'email in your inbox with further ' +
                                       'instruction. If you cannot find the email, ' +

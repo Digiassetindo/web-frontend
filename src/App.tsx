@@ -29,9 +29,9 @@ const MobileHeader = React.lazy(() => import('./mobile/components/Header').then(
 /* Desktop components */
 const AlertsContainer = React.lazy(() => import('./containers/Alerts').then(({ Alerts }) => ({ default: Alerts })));
 const CustomizationContainer = React.lazy(() => import('./containers/Customization').then(({ Customization }) => ({ default: Customization })));
-const FooterContainer = React.lazy(() => import('./containers/Footer').then(({ Footer }) => ({ default: Footer })));
-const HeaderContainer = React.lazy(() => import('./containers/Header').then(({ Header }) => ({ default: Header })));
-const SidebarContainer = React.lazy(() => import('./containers/Sidebar').then(({ Sidebar }) => ({ default: Sidebar })));
+// const FooterContainer = React.lazy(() => import('./containers/Footer').then(({ Footer }) => ({ default: Footer })));
+// const HeaderContainer = React.lazy(() => import('./containers/Header').then(({ Header }) => ({ default: Header })));
+// const SidebarContainer = React.lazy(() => import('./containers/Sidebar').then(({ Sidebar }) => ({ default: Sidebar })));
 const LayoutContainer = React.lazy(() => import('./routes').then(({ Layout }) => ({ default: Layout })));
 
 const getTranslations = (lang: string, isMobileDevice: boolean) => {
@@ -61,12 +61,12 @@ const RenderDeviceContainers = () => {
 
     return (
         <React.Fragment>
-            <HeaderContainer/>
-            <SidebarContainer/>
+            {/* <HeaderContainer/> */}
+            {/* <SidebarContainer/> */}
             <CustomizationContainer/>
             <AlertsContainer/>
             <LayoutContainer/>
-            <FooterContainer/>
+            {/* <FooterContainer/> */}
         </React.Fragment>
     );
 };

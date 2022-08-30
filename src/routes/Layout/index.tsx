@@ -7,7 +7,7 @@ import { Redirect, withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import { IntlProps } from '../../';
 import { minutesUntilAutoLogout, sessionCheckInterval, showLanding } from '../../api';
-import { ExpiredSessionModal } from '../../components';
+import { ExpiredSessionModal } from 'components';
 import { WalletsFetch } from '../../containers';
 import { toggleColorTheme } from '../../helpers';
 import {
@@ -51,7 +51,7 @@ import {
     User,
     userFetch,
     walletsReset,
-} from '../../modules';
+} from 'modules';
 import {
     CustomizationDataInterface,
     customizationFetch,
@@ -63,13 +63,16 @@ import {
     selectRanger,
 } from '../../modules/public/ranger';
 import {
-    ChangeForgottenPasswordScreen,
+   //  ChangeForgottenPasswordScreen,
     ConfirmScreen,
     DocumentationScreen,
-    EmailVerificationScreen,
-    ForgotPasswordScreen,
+   //  EmailVerificationScreen,
+   //  ForgotPasswordScreen,
     HistoryScreen,
     LandingScreen,
+    Login,
+    Register,
+    ForgotPassword,
     MagicLink,
     MaintenanceScreen,
     OrdersTabScreen,
@@ -81,6 +84,8 @@ import {
     TradingScreen,
     VerificationScreen,
     WalletsScreen,
+    ChangeForgotPassword,
+    EmailVerification,
 } from '../../screens';
 
 interface ReduxProps {
@@ -143,7 +148,7 @@ const PrivateRoute: React.FunctionComponent<any> = ({ component: CustomComponent
 
     return (
         <Route {...rest}>
-            <Redirect to={'/signin'} />
+            <Redirect to={'/login'} />
         </Route>
     );
 };
@@ -293,12 +298,12 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
             isLoggedIn,
             isMobileDevice,
             userLoading,
-            location,
+            // location,
             configsLoading,
             platformAccessStatus,
         } = this.props;
         const { isShownExpSessionModal } = this.state;
-        const tradingCls = location.pathname.includes('/trading') ? 'trading-layout' : '';
+      //   const tradingCls = location.pathname.includes('/trading') ? 'trading-layout' : '';
         toggleColorTheme(colorTheme);
 
         if (configsLoading && !platformAccessStatus.length) {
@@ -340,15 +345,20 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
         }
 
         return (
-            <div className={`container-fluid pg-layout ${tradingCls}`}>
+            <>
+            {/* <div className={`container-fluid pg-layout ${tradingCls}`}> */}
                 <Switch>
                     <Route exact={true} path="/magic-link" component={MagicLink} />
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/signin" component={SignInScreen} />
+                    <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/login" component={Login} />
+                    <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/register" component={Register} />
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/accounts/confirmation" component={VerificationScreen} />
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/signup" component={SignUpScreen} />
-                    <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/forgot_password" component={ForgotPasswordScreen} />
-                    <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/accounts/password_reset" component={ChangeForgottenPasswordScreen} />
-                    <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/email-verification" component={EmailVerificationScreen} />
+                    <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/forgot_password" component={ForgotPassword} />
+                    {/* <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/forgot_password" component={ForgotPasswordScreen} /> */}
+                    {/* <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/accounts/password_reset" component={ChangeForgottenPasswordScreen} /> */}
+                    <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/accounts/password_reset" component={ChangeForgotPassword} />
+                    <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/email-verification" component={EmailVerification} />
                     <Route path="/404" component={RestrictedScreen} />
                     <Route path="/500" component={MaintenanceScreen} />
                     <Route exact={true} path="/trading/:market?" component={TradingScreen} />
@@ -364,7 +374,7 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
                 </Switch>
                 {isLoggedIn && <WalletsFetch/>}
                 {isShownExpSessionModal && this.handleRenderExpiredSessionModal()}
-            </div>
+            </>
         );
     }
 
@@ -415,7 +425,7 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
     private handleSubmitExpSessionModal = () => {
         const { history } = this.props;
         this.handleChangeExpSessionModalState();
-        history.push('/signin');
+        history.push('/login');
     };
 
     private handleRenderExpiredSessionModal = () => (

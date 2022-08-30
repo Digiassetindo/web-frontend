@@ -73,7 +73,8 @@ interface OwnProps {
 
 type Props = ReduxProps & DispatchProps & RouterProps & IntlProps & OwnProps;
 
-export const extractRefID = (props: RouterProps) => new URLSearchParams(props.location.search).get('refid');
+// Adib Comment
+// export const extractRefID = (props: RouterProps) => new URLSearchParams(props.location.search).get('refid');
 
 class SignUp extends React.Component<Props> {
     public readonly state = {
@@ -171,7 +172,7 @@ class SignUp extends React.Component<Props> {
         const className = cx('pg-sign-up-screen__container', { loading });
 
         return (
-            <div className="pg-sign-up-screen">
+            <div>
                 <div className={className}>
                     <SignUpForm
                         labelSignIn={this.props.intl.formatMessage({ id: 'page.header.signIn'})}
