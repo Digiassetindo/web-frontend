@@ -1,22 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000">
-    <meta name="description" content="Best place for buy Bitcoin, Ethereum,Ripple, Stellar" />
-    <meta name="ui-version" content="1.0" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" async />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" async />
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:400" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,700" as="font" type="font/woff2" crossorigin />
+    <meta charset="utf-8">
     <title>Digiassetindo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/webmanifest.json" />
+    <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Cryptocurrency Exchange" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@digiasset" />
+    <meta name="twitter:title" content="Digiasset - Cryptocurrency Exchange" >
+    <meta name="twitter:description" content="Cryptocurrency Exchange" >
+    <meta name="twitter:creator" content="@digiasset" />
+    <meta name="twitter:image" content="https://digiassetindo.com/img/twitter-card.jpg" />
+    <meta property="og:title" content="Digiasset - Cryptocurrency Exchange" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:url" content="https://digiassetindo.com" />
+    <meta property="og:image" content="https://digiassetindo.com/img/fb-og-image.jpg" />
+    <meta property="og:description" content="Cryptocurrency Exchange" />
+    <meta property="og:site_name" content="Digiasset - Cryptocurrency Exchange" />
+    <meta property="fb:admins" content="132951670226590" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script>
+      let viewportmeta = document.querySelector('meta[name="viewport"]');
+      if (viewportmeta) {
+        if (screen.width < 375) {
+          let newScale = screen.width / 375;
+          viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+        } else {
+          viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+        }
+      }
+    </script>
   </head>
   <body>
     <script src="%PUBLIC_URL%/config/env.js"></script>
+    <script>
+      console.log(localStorage.getItem('darkMode'));
+      if (localStorage.getItem('darkMode') === "on") {
+        document.body.classList.add("dark");
+        document.addEventListener("DOMContentLoaded", function() {
+          document.querySelector('.js-theme input').checked = true;
+        });
+      }
+    </script>
     <noscript>
         You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+    <div id="root" class="outer"></div>
   </body>
 </html>
