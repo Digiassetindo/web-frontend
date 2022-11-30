@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+   .bar .too-weak {
+      @apply bg-red-500 w-1/5 rounded-2xl;
+   }
+   .bar .weak {
+      @apply bg-yellow-500 w-2/5 rounded-2xl;
+   }
+   .bar .good {
+      @apply bg-cyan-500 w-3/5 rounded-2xl;
+   }
+   .bar .strong {
+      @apply bg-teal-500 w-4/5 rounded-2xl;
+   }
+   .bar .very-strong {
+      @apply bg-green-500 w-full rounded-2xl;
+   }
+   .too-weak {
+      @apply text-red-500 font-bold;
+   }
+   .weak {
+      @apply text-yellow-500 font-bold;
+   }
+   .good {
+      @apply text-cyan-500 font-bold;
+   }
+   .strong {
+      @apply text-teal-500 font-bold;
+   }
+   .very-strong {
+      @apply text-green-500 font-bold;
+   }
+
+   .p-initial {
+      @apply h-9 w-9 inline-flex items-center justify-center text-neutral1 border border-solid border-primary1 rounded-2xl;
+   }
+   .p-active {
+      @apply h-9 w-9 inline-flex items-center justify-center text-white1 border border-solid border-primary1 hover:border-primary2 bg-primary1 hover:bg-primary2 rounded-2xl;
+   }
+   .p-disabled {
+      @apply text-white1 border border-solid border-neutral5 hover:border-neutral6 bg-neutral5 hover:bg-neutral6;
+   }
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+   -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
